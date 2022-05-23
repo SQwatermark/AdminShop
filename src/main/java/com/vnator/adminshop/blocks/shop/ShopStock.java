@@ -75,7 +75,7 @@ public class ShopStock {
 		for(ArrayList<ShopItem> siList : sellStock){
 			for(ShopItem si : siList){
 				String str = si.toString();
-				System.out.println(str);
+//				System.out.println(str);
 				sellMap.put(str, si);
 			}
 		}
@@ -85,7 +85,7 @@ public class ShopStock {
 		for(ArrayList<ShopItem> siList : buyStock){
 			for(ShopItem si : siList){
 				String str = si.toString();
-				System.out.println(str);
+//				System.out.println(str);
 				buyMap.put(str, si);
 			}
 		}

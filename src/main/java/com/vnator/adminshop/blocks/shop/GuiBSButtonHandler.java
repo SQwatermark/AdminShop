@@ -21,9 +21,9 @@ public class GuiBSButtonHandler {
 	private int nextSpace;
 
 	public GuiBSButtonHandler(){
-		buttons = new ArrayList<GuiButtonShop[]>();
+		buttons = new ArrayList<>();
 		category = 0;
-		buttonScroll = new ArrayList<Integer>();
+		buttonScroll = new ArrayList<>();
 
 		nextSpace = 0;
 	}
@@ -84,7 +84,7 @@ public class GuiBSButtonHandler {
 	 */
 	public boolean canScroll(boolean up){
 		int nscroll = buttonScroll.get(category) + (up ? -1 : 1);
-		System.out.println(nscroll);
+//		System.out.println(nscroll);
 		if(nscroll < 0 || nscroll*GuiShop.SHOP_BUTTONS_PER_PAGE >= buttons.get(category).length)
 			return false;
 		return true;
@@ -125,7 +125,7 @@ public class GuiBSButtonHandler {
 				buttons.get(category)[index].visible = visible;
 				buttons.get(category)[index].enabled = visible;
 			}catch(NullPointerException e){
-				System.out.println("NPE on setVisible for button category "+category+", index "+index);
+//				System.out.println("NPE on setVisible for button category "+category+", index "+index);
 				continue;
 			}
 		}

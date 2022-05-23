@@ -115,7 +115,7 @@ public class TileEntityAutoBuyer extends TileEntity implements ITickable, IInven
 			if(isBuyingItem){
 				if(tobuyItem == null || !slotted.isItemEqual(tobuyItem)){
 					String itemName = getBuyItemName(slotted);
-					System.out.println(itemName);
+//					System.out.println(itemName);
 					if(itemName.equals("")) return; //Non-buyable item
 
 					ShopItem shopItem = ShopStock.buyMap.get(itemName);
@@ -146,11 +146,11 @@ public class TileEntityAutoBuyer extends TileEntity implements ITickable, IInven
 				float cost = price * quantity;
 				boolean isTransactionSuccess = BalanceAdapter.canWithdraw(world, player, cost) &&
 						ItemHandlerHelper.insertItem(handler, tobuyItem, true).isEmpty();
-				System.out.println("Can buy: "+isTransactionSuccess+"; Cost: "+cost+"; can insert item: "+ItemHandlerHelper.insertItem(handler, toBuy, true).isEmpty());
+//				System.out.println("Can buy: "+isTransactionSuccess+"; Cost: "+cost+"; can insert item: "+ItemHandlerHelper.insertItem(handler, toBuy, true).isEmpty());
 				if(isTransactionSuccess){
 					BalanceAdapter.withdraw(world, player, cost);
 					ItemHandlerHelper.insertItem(handler, tobuyItem.copy(), false);
-					System.out.println("Inserted item");
+//					System.out.println("Inserted item");
 				}
 			}else{
 				tobuyFluid.amount = quantity;
@@ -158,10 +158,10 @@ public class TileEntityAutoBuyer extends TileEntity implements ITickable, IInven
 				if(ent == null || !ent.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.DOWN)) return;
 				IFluidHandler handler = ent.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, EnumFacing.DOWN);
 				float cost = price * quantity;
-				System.out.println("cost: "+cost);
+//				System.out.println("cost: "+cost);
 				boolean isTransactionSuccess = BalanceAdapter.canWithdraw(world, player, cost) &&
 						handler.fill(tobuyFluid, false) == tobuyFluid.amount;
-				System.out.println("Can buy fluid: "+isTransactionSuccess+"; filling amt: "+handler.fill(tobuyFluid, false));
+//				System.out.println("Can buy fluid: "+isTransactionSuccess+"; filling amt: "+handler.fill(tobuyFluid, false));
 				if(isTransactionSuccess){
 					BalanceAdapter.withdraw(world, player, cost);
 					handler.fill(tobuyFluid.copy(), true);
@@ -173,12 +173,12 @@ public class TileEntityAutoBuyer extends TileEntity implements ITickable, IInven
 	private String getBuyItemName(ItemStack item){
 		ArrayList<String> names = new ArrayList<>();
 		String name = item.getItem().getRegistryName() + ":" + item.getMetadata();
-		System.out.println("name of to buy:" + name);
+//		System.out.println("name of to buy:" + name);
 		if (item.getTagCompound() != null) {
 			if(item.getTagCompound().hasNoTags()) //add without tags if empty nbt
 				names.add(name);
 			name += " " + item.getTagCompound().toString();
-			System.out.println("Other name: "+name);
+//			System.out.println("Other name: "+name);
 		}
 		names.add(name);
 

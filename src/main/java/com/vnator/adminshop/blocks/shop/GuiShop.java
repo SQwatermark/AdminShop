@@ -118,11 +118,11 @@ public class GuiShop extends GuiContainer {
 		boolean errorFlag = false;
 		buyButtonHandler = new GuiBSButtonHandler();
 		buyButtons = new ArrayList<GuiButtonShop[]>();
-		System.out.println("BuyStock Size: "+ShopStock.buyStock.size());
+//		System.out.println("BuyStock Size: "+ShopStock.buyStock.size());
 		for(int i = 0; i < ShopStock.buyStock.size(); i++){
 			buyButtonHandler.addCategory(ShopStock.buyStock.get(i).size());
 			buyButtons.add(new GuiButtonShop[ShopStock.buyStock.get(i).size()]);
-			System.out.println("BuyStock index "+i+" Size: "+ShopStock.buyStock.get(i).size());
+//			System.out.println("BuyStock index "+i+" Size: "+ShopStock.buyStock.get(i).size());
 			for(int j = 0; j < ShopStock.buyStock.get(i).size(); j++){
 				/*
 				ItemStack buySample = ShopStock.buyItems.get(i)[j];
@@ -136,7 +136,7 @@ public class GuiShop extends GuiContainer {
 				}
 				*/
 				ShopItem sample = ShopStock.buyStock.get(i).get(j);
-				System.out.println("createBuyButtons: "+i+" , "+j+"; "+sample.toString());
+//				System.out.println("createBuyButtons: "+i+" , "+j+"; "+sample.toString());
 				GuiButtonShop but = new GuiButtonShop(buttonCounter, x+62+18*(j%NUM_COLS),
 						y+18+18*((j/NUM_COLS)%NUM_ROWS),
 						sample, sample.getPrice(), true, itemRender);
@@ -267,16 +267,16 @@ public class GuiShop extends GuiContainer {
 		int x = (width-xSize) / 2;
 		int y = (height-ySize) / 2;
 		//Scroll up and down buttons
-		System.out.println("mouse location: "+(mouseX-x)+" , "+(mouseY-y));
+//		System.out.println("mouse location: "+(mouseX-x)+" , "+(mouseY-y));
 		if(mouseX > 170+x && mouseX < 186+x){
 			GuiBSButtonHandler handler = buyMode ? buyButtonHandler : sellButtonHandler;
 			if(mouseY > 18+y && mouseY < 34+y){
-				System.out.println("Scrolling up!");
+//				System.out.println("Scrolling up!");
 				if(handler.canScroll(true)){
 					handler.scroll(true);
 				}
 			}else if(mouseY > 108+y && mouseY < 124+y){
-				System.out.println("Scrolling down!");
+//				System.out.println("Scrolling down!");
 				if(handler.canScroll(false)){
 					handler.scroll(false);
 				}

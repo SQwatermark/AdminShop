@@ -35,11 +35,11 @@ public class ContainerSeller extends Container {
 				//Check if the item itself is sellable
 				String id = stack.getItem().getRegistryName() + ":" + stack.getMetadata();
 				boolean itemIn = ShopStock.sellMap.containsKey(id);
-				System.out.println(id);
+//				System.out.println(id);
 				if(stack.getTagCompound() != null) {
 					id += " " + stack.getTagCompound().toString();
 					itemIn = itemIn || ShopStock.sellMap.containsKey(id);
-					System.out.println(id);
+//					System.out.println(id);
 				}
 				if(itemIn)
 					return true;
@@ -48,14 +48,14 @@ public class ContainerSeller extends Container {
 				boolean oreIn;
 				int [] oreIDs = OreDictionary.getOreIDs(stack);
 				for(int i : oreIDs) {
-					System.out.println(i);
+//					System.out.println(i);
 					if(ShopStock.sellMap.containsKey(""+i)) {
-						System.out.println("Matches!");
+//						System.out.println("Matches!");
 						return true;
 					}
 					if(stack.hasTagCompound()){
 						String checkKey = i+" "+stack.getTagCompound().toString();
-						System.out.println(checkKey);
+//						System.out.println(checkKey);
 						if(ShopStock.sellMap.containsKey(checkKey))
 							return true;
 					}
@@ -77,7 +77,7 @@ public class ContainerSeller extends Container {
 				if(fluid != null){
 					String name = fluid.getFluid().getName();
 					if(ShopStock.sellMap.containsKey(name)) {
-						System.out.println("Matches!");
+//						System.out.println("Matches!");
 						return true;
 					}
 					if(fluid.tag != null)

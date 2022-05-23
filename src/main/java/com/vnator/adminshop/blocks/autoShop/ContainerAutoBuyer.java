@@ -36,11 +36,11 @@ public class ContainerAutoBuyer extends Container {
 				//Check if the item itself is buyable
 				String id = stack.getItem().getRegistryName() + ":" + stack.getMetadata();
 				boolean itemIn = ShopStock.buyMap.containsKey(id);
-				System.out.println(id);
+//				System.out.println(id);
 				if(stack.getTagCompound() != null) {
 					id += " " + stack.getTagCompound().toString();
 					itemIn = itemIn || ShopStock.buyMap.containsKey(id);
-					System.out.println(id);
+//					System.out.println(id);
 				}
 				if(itemIn)
 					return true;
@@ -49,14 +49,14 @@ public class ContainerAutoBuyer extends Container {
 				boolean oreIn;
 				int [] oreIDs = OreDictionary.getOreIDs(stack);
 				for(int i : oreIDs) {
-					System.out.println(i);
+//					System.out.println(i);
 					if(ShopStock.buyMap.containsKey(""+i)) {
-						System.out.println("Matches!");
+//						System.out.println("Matches!");
 						return true;
 					}
 					if(stack.hasTagCompound()){
 						String checkKey = i+" "+stack.getTagCompound().toString();
-						System.out.println(checkKey);
+//						System.out.println(checkKey);
 						if(ShopStock.buyMap.containsKey(checkKey))
 							return true;
 					}
@@ -67,7 +67,7 @@ public class ContainerAutoBuyer extends Container {
 				if(fluid != null){
 					String name = fluid.getFluid().getName();
 					if(ShopStock.buyMap.containsKey(name)) {
-						System.out.println("Matches!");
+//						System.out.println("Matches!");
 						return true;
 					}
 					if(fluid.tag != null)
