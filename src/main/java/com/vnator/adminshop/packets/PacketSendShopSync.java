@@ -3,8 +3,8 @@ package com.vnator.adminshop.packets;
 import com.vnator.adminshop.AdminShop;
 import com.vnator.adminshop.blocks.shop.ShopLoader;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -26,15 +26,13 @@ public class PacketSendShopSync implements IMessage {
 
 	@Override
 	public void fromBytes(ByteBuf buf) {
-		byte [] bytes = new byte[buf.readableBytes()];
-		buf.readBytes(bytes);
-		myfile = new String(bytes);
+		myfile = ByteBufUtils.readUTF8String(buf);
 		shopStream = new StringReader(myfile);
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
-		buf.writeBytes(myfile.getBytes());
+		ByteBufUtils.writeUTF8String(buf, myfile);
 	}
 
 	public PacketSendShopSync(){}

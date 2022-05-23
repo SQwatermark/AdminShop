@@ -2,16 +2,12 @@ package com.vnator.adminshop.blocks.shop;
 
 import com.opencsv.CSVReader;
 import com.vnator.adminshop.AdminShop;
-import net.minecraft.advancements.AdvancementList;
-import net.minecraft.advancements.AdvancementManager;
-import net.minecraft.client.Minecraft;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.fluids.Fluid;
@@ -20,7 +16,9 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
+
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -57,9 +55,9 @@ public class ShopLoader {
 	private static boolean isWorldLoaded = false;
 
 	private ShopLoader(){
-		buyItems = new ArrayList<ArrayList<ShopItem>>();
-		sellItems = new ArrayList<ArrayList<ShopItem>>();
-		errorLog = new ArrayList<TextComponentString>();
+		buyItems = new ArrayList<>();
+		sellItems = new ArrayList<>();
+		errorLog = new ArrayList<>();
 		isLogged = false;
 	}
 
@@ -91,7 +89,7 @@ public class ShopLoader {
 		try {
 			resetVars();
 			if(shopFile == null) {
-				reader = new CSVReader(new FileReader(SHOP_FILE));
+				reader = new CSVReader(new InputStreamReader(new FileInputStream(SHOP_FILE), StandardCharsets.UTF_8));
 			}else{
 				reader = new CSVReader(shopFile);
 			}
@@ -114,7 +112,7 @@ public class ShopLoader {
 
 		try {
 			fileContents = "";
-			Scanner scan = new Scanner(new File(SHOP_FILE));
+			Scanner scan = new Scanner(new File(SHOP_FILE), String.valueOf(StandardCharsets.UTF_8));
 			while (scan.hasNext())
 				fileContents += scan.nextLine() + "\n";
 		} catch (IOException e) {
