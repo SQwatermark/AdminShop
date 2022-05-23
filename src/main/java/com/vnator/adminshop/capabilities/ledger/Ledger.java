@@ -6,7 +6,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import org.apache.logging.log4j.Level;
 
 import java.util.HashMap;
-import java.util.logging.Logger;
 
 public class Ledger implements ILedger{
 

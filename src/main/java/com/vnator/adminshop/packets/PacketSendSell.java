@@ -2,9 +2,6 @@ package com.vnator.adminshop.packets;
 
 import com.vnator.adminshop.blocks.shop.ShopStock;
 import io.netty.buffer.ByteBuf;
-import jdk.nashorn.internal.ir.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;

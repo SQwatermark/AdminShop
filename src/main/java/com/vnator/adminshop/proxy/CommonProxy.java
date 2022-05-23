@@ -7,17 +7,13 @@ import com.vnator.adminshop.capabilities.money.IMoney;
 import com.vnator.adminshop.capabilities.money.MoneyFactory;
 import com.vnator.adminshop.capabilities.money.MoneyStorage;
 import com.vnator.adminshop.packets.PacketHandler;
-import net.minecraft.command.CommandHandler;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.common.config.Configuration;
-
-import java.io.File;
 
 public class CommonProxy {
 

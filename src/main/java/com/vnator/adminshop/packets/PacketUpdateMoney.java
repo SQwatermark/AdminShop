@@ -1,7 +1,6 @@
 package com.vnator.adminshop.packets;
 
 import com.vnator.adminshop.capabilities.BalanceAdapter;
-import com.vnator.adminshop.capabilities.ledger.LedgerProvider;
 import com.vnator.adminshop.capabilities.money.IMoney;
 import com.vnator.adminshop.capabilities.money.MoneyProvider;
 import io.netty.buffer.ByteBuf;

@@ -1,39 +1,27 @@
 package com.vnator.adminshop.packets;
 
 import com.vnator.adminshop.AdminShop;
-import com.vnator.adminshop.ConfigHandler;
 import com.vnator.adminshop.blocks.shop.ShopItem;
-import com.vnator.adminshop.blocks.shop.ShopItemStack;
 import com.vnator.adminshop.blocks.shop.ShopStock;
 import com.vnator.adminshop.capabilities.BalanceAdapter;
-import com.vnator.adminshop.client.AdminshopTab;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
-import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.ItemStackHandler;
 import org.apache.logging.log4j.Level;
-
-import static net.minecraftforge.items.ItemHandlerHelper.insertItem;
 
 /**
  * Packet sent from client to server to perform a transaction.

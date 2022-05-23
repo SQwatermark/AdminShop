@@ -1,16 +1,10 @@
 package com.vnator.adminshop;
 
-import com.vnator.adminshop.blocks.shop.ShopStock;
-import com.vnator.adminshop.proxy.CommonProxy;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import org.apache.logging.log4j.Level;
-
-import java.util.ArrayList;
 
 @Config(modid = AdminShop.MODID, name = AdminShop.MODID+"/"+AdminShop.MODID, category = "")
 @Mod.EventBusSubscriber

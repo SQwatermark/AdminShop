@@ -3,7 +3,6 @@ package com.vnator.adminshop.blocks.autoShop;
 import com.vnator.adminshop.AdminShop;
 import com.vnator.adminshop.ModGuiHandler;
 import com.vnator.adminshop.blocks.BlockTileEntity;
-import com.vnator.adminshop.blocks.seller.TileEntitySeller;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;

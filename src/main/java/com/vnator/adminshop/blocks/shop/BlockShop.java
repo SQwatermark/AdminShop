@@ -3,8 +3,6 @@ package com.vnator.adminshop.blocks.shop;
 import com.vnator.adminshop.AdminShop;
 import com.vnator.adminshop.ModGuiHandler;
 import com.vnator.adminshop.blocks.BlockTileEntity;
-import com.vnator.adminshop.capabilities.money.IMoney;
-import com.vnator.adminshop.capabilities.money.MoneyProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;

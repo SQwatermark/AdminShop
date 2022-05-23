@@ -2,10 +2,7 @@ package com.vnator.adminshop.commands;
 
 import com.vnator.adminshop.AdminShop;
 import com.vnator.adminshop.ModGuiHandler;
-import com.vnator.adminshop.blocks.shop.ContainerShop;
-import com.vnator.adminshop.blocks.shop.GuiShop;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;

@@ -1,10 +1,7 @@
 package com.vnator.adminshop;
 
-import com.google.common.eventbus.Subscribe;
 import com.vnator.adminshop.blocks.shop.ShopLoader;
-import com.vnator.adminshop.blocks.shop.ShopStock;
 import com.vnator.adminshop.capabilities.BalanceAdapter;
-import com.vnator.adminshop.capabilities.money.MoneyProvider;
 import com.vnator.adminshop.client.AdminshopTab;
 import com.vnator.adminshop.packets.PacketHandler;
 import com.vnator.adminshop.packets.PacketUpdateMoney;
@@ -27,9 +24,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
-
-import java.io.File;
-import java.util.ArrayList;
 
 @Mod.EventBusSubscriber
 @Mod(modid = AdminShop.MODID, name = AdminShop.NAME, version = AdminShop.VERSION)

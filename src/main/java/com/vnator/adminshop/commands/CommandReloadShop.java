@@ -1,6 +1,5 @@
 package com.vnator.adminshop.commands;
 
-import com.vnator.adminshop.blocks.shop.ShopLoader;
 import com.vnator.adminshop.packets.PacketHandler;
 import com.vnator.adminshop.packets.PacketRequestReloadShop;
 import net.minecraft.command.CommandBase;
