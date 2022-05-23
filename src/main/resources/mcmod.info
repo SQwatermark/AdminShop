@@ -1,14 +1,14 @@
 [
   {
     "modid": "adminshop",
-    "name": "Admin Shop",
-    "description": "Example placeholder mod.",
-    "version": "1.5.1",
+    "name": "Admin Shop Unofficial",
+    "description": "Unofficial version of admin shop",
+    "version": "1.5.2",
     "mcversion": "1.12.2",
     "url": "",
     "updateUrl": "",
-    "authorList": ["ExampleDude"],
-    "credits": "The Forge and FML guys, for making this example",
+    "authorList": ["Vnator"],
+    "credits": "",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
