@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import org.apache.logging.log4j.Level;
 
 import java.io.StringReader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Packet sent from server to client on login to sync contents of shops.
@@ -26,13 +27,13 @@ public class PacketSendShopSync implements IMessage {
 
 	@Override
 	public void fromBytes(ByteBuf buf) {
-		myfile = ByteBufUtils.readUTF8String(buf);
+		myfile = buf.toString(StandardCharsets.UTF_8);
 		shopStream = new StringReader(myfile);
 	}
 
 	@Override
 	public void toBytes(ByteBuf buf) {
-		ByteBufUtils.writeUTF8String(buf, myfile);
+		buf.writeBytes(myfile.getBytes(StandardCharsets.UTF_8));
 	}
 
 	public PacketSendShopSync(){}
